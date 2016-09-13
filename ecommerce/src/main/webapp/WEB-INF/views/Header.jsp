@@ -24,6 +24,7 @@
   					<li><a href="AboutUs"style="color:white"><span class="glyphicon glyphicon-info-sign">AboutUs</span></a></li>
   					<li><a href="Register"style="color:white"><span class="glyphicon glyphicon-pencil">Register</span></a></li>
   					<li><a href="Login"style="color:white"><span class="glyphicon glyphicon-user">Login</span></a></li>
+  					<li><a href="AddProduct" style="color:white">AddProduct</a></li>
   				</ul>
   			</div>		
   		</div>

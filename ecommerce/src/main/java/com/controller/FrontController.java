@@ -17,20 +17,17 @@ public class FrontController
 	{  
         return new ModelAndView("AboutUs");
 	}
-	@RequestMapping("/Register")  
-    public ModelAndView register() 
-	{  
-        return new ModelAndView("Register");
-	}
+	
 	@RequestMapping("/Login")  
     public ModelAndView login() 
 	{  
         return new ModelAndView("Login");
 	}
-	@RequestMapping("/Product")  
+	@RequestMapping("/ProductPagination")  
     public ModelAndView product() 
 	{  
-        return new ModelAndView("Product");
+        return new ModelAndView("ProductPagination");
 	}
 	
+
 }

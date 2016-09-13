@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -26,66 +27,67 @@
 	<div class="container padding-top-10">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				Registration
+				<strong>User Registration</strong>
 			</div>
 			<div class="panel-body">
-				<form>
+				<form:form id="register" method="post" action="adduser" commandName="userreg">
 					<label for="firstName" class="control-label">Name:</label>
 					<div class="row">
 						<div class="col-md-6 padding-top-10">
-							<input type="text" class="form-control" id="firstName" placeholder="First" />
+							<form:input type="text" class="form-control" path="firstname" id="firstName" placeholder="First" />
 						</div>
 						<div class="col-md-6 padding-top-10">
-							<input type="text" class="form-control" id="lastName" placeholder="Last" />
+							<form:input type="text" class="form-control" path="lastname" id="lastName" placeholder="Last" />
 						</div>
 					</div>
 					<label for="address1" class="control-label padding-top-10">Address:</label>
 					<div class="row padding-top-10">
 						<div class="col-md-12">
-							<input type="text" class="form-control" id="address1" placeholder="Address line 1" />							
-						</div>
-					</div>
-					<div class="row padding-top-10">
-						<div class="col-md-12">
-							<input type="text" class="form-control" id="address2" placeholder="Address line 2" />							
+							<form:input type="text" class="form-control" path="address" id="address" placeholder="Address line 1" />							
 						</div>
 					</div>
 					<div class="row">						
 						<div class="col-md-6 padding-top-10">
 							<label for="city" class="control-label">City:</label>
-							<input type="text" class="form-control" id="city" placeholder="Your city" />													
+							<form:input type="text" class="form-control" path="city" id="city" placeholder="Your city" />													
 						</div>
 						<div class="col-md-2 padding-top-10">
-							<label for="stateorregion" class="control-label">State / Region:</label>
-							<input type="text" class="form-control" id="stateorregion" placeholder="Your state / region" />																			
+							<label for="stateorregion" class="control-label">State</label>
+							<form:input type="text" class="form-control" path="state" id="state" placeholder="Your state" />																			
 						</div>
 						<div class="col-md-4 padding-top-10">
 							<label for="zipcode" class="control-label">Zipcode:</label>
-							<input type="text" class="form-control" id="zipcode" placeholder="Your zipcode" />													
+							<form:input type="text" class="form-control" path="zipcode" id="zipcode" placeholder="Your zipcode" />													
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 padding-top-10">
 							<label for="email" class="control-label">Email Address:</label>
-							<input type="text" class="form-control" id="email" placeholder="Email Address" />
+							<form:input type="text" class="form-control" path="email" id="email" placeholder="Email Address" />
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 padding-top-10">
 							<label for="password" class="control-label">Password:</label>
-							<input type="password" class="form-control" id="password" placeholder="Enter your password" />
+							<form:input type="password" class="form-control" path="password" id="password" placeholder="Enter your password" />
 						</div>
 						<div class="col-md-6 padding-top-10">
 							<label for="confirmpassword" class="control-label">Confirm Password:</label>
-							<input type="password" class="form-control" id="confirmpassword" placeholder="Confirm your password" />
+							<form:input type="password" class="form-control" path="confirmpassword" id="confirmpassword" placeholder="Confirm your password" />
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-6 padding-top-10">
+							<label for="mobileno" class="control-label">MobileNo:</label>
+							<form:input type="text" class="form-control" path="mobileno" id="mobileno" placeholder="Enter your Mobile Number"/>
 						</div>
 					</div><br>
 					<div class="row">
 						<div class="col-md-2">
-							<button type="button" class="btn btn-success">Register</button>
+							<button type="submit" class="btn btn-success">Register</button> 
 						</div>
 					</div>
-				</form>
+				</form:form>
 			</div>
 		</div>
 	</div>

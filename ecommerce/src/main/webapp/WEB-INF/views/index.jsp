@@ -29,7 +29,7 @@
   			<img src="<c:url value="/resources/img/Chelsea.jpg"/>" alt="Jersey" class="img-circle">
   			<h2>English League</h2>
   			<p>Get this Chelsea Jersey at just 20$</p>
-  			<a href="Product" class="btn btn-primary">BuyNow</a>
+  			<a href="ProductPagination" class="btn btn-primary">BuyNow</a>
   		</div>
   		<div class="col-md-4 col-sm-4 col-xs-12">
   			<img src="<c:url value="/resources/img/Bayern.jpg"/>" alt="BayernJersey" class="img-circle">
