@@ -21,7 +21,7 @@
     <![endif]-->
     </head>
 <body>
-<div class="navbar navbar-dark navbar-static-bottom bg-primary" role="navigation">
+<div class="navbar navbar-inverse navbar-static-bottom"  role="navigation">
   			
   		<div class="navbar-text pull-left">
   			<font color="white">

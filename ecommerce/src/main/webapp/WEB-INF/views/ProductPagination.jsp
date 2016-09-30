@@ -6,20 +6,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Product Pagination</title>
+	<!-- Angular js -->
+<script src="<c:url value="/resources/js/angular.min.js" />"></script>
 	<!-- Bootstrap -->
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
 </head>
 <body>
 <%@include file="Header.jsp"%>
+<div ng-app ="mainApp" ng-controller="productController">
 	<div class="container" id="product-section">
- 	  <div class="row">
+ 	  <div class="row" ng-repeat="p in productlist">
    		<div class="col-md-6">
-    		<img src="<c:url value="/resources/img/Chelsea.jpg"/>" class="img-thumbnail" alt="Jersey" class="image-responsive">		
+    		<img src="<c:url value="/resources/img/imguploads/{{p.imgname}}"/>" class="img-thumbnail" alt="Jersey" class="image-responsive">		
    		</div>
    		<div class="col-md-6">
     		<div class="row">
   			<div class="col-md-12">
-   			<h1>Chelsea Football Club Jersey</h1>
+   			<h1>{{p.productName}}</h1>
 			 </div>		
    			</div>
    			<div class="row">
@@ -31,29 +34,58 @@
 			<div class="row">
  				<div class="col-md-12">
   				<p class="description">
-  				Classic Chelsea Kit. Official Adidas Sponsors
-   			 	Amazing Fabric,Customized Name And Number Also Done!
+  				{{p.productDescription}}
   				</p>
  				</div>
 			</div>
 			<div class="row">
- 				<div class="col-md-3">
+ 				<div class="col-md-6">
   				<span class="sr-only">Four out of Five Stars</span>
   				<span class="glyphicon glyphicon-star"></span>
   				<span class="glyphicon glyphicon-star"></span>
   				<span class="glyphicon glyphicon-star"></span>
   				<span class="glyphicon glyphicon-star"></span>
   				<span class="glyphicon glyphicon-star-empty"></span>
-  				<span class="label label-success">45</span>
+  				<span class="label label-success">In-Stock:{{p.unitsInStock}}</span>
  				</div>
- 			<div class="col-md-3">
-  				<span class="monospaced">Write a Review</span>
- 			</div>
+ 			
+			</div>
+			<div class="row">
+ 				<div class="col-md-12">
+  				<p class="description">
+  				Sponsors:{{p.productManufacturer}}
+  				</p>
+ 				</div>
+			</div>
+			<div class="row">
+ 				<div class="col-md-12">
+  				<p class="description">
+  				Price:Rs.{{p.productPrice}}
+  				</p>
+ 				</div>
 			</div>
 			
   	 	</div><!-- end row -->
  	</div><!-- end container -->
+	</div>
 	</div><br><br><br>
+	<script>	
+ 
+ 	var mainApp = angular.module("mainApp", []);
+ 	mainApp.controller("productController", function($scope){
+	 
+	 var json ='${products}';
+	 var products=JSON.parse(json); 
+	 $scope.productlist=products;
+	 
+	 
+	 });
+ 
+	
+		
+</script>
+	
+	
 	<%@include file="Footer.jsp"%>
 
 

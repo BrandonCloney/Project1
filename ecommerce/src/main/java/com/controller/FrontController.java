@@ -23,11 +23,6 @@ public class FrontController
 	{  
         return new ModelAndView("Login");
 	}
-	@RequestMapping("/ProductPagination")  
-    public ModelAndView product() 
-	{  
-        return new ModelAndView("ProductPagination");
-	}
 	
 
 }

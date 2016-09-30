@@ -51,9 +51,27 @@ public class ProductDAOImpl implements ProductDAO
 		return null;
 	}
 
-	public List<Product> listProducts() {
-		// TODO Auto-generated method stub
-		return null;
+	@SuppressWarnings({ "unchecked", "deprecation" })
+	@Transactional
+	public List<Product> listProducts() 
+	{
+		
+		List<Product> productList=null;
+		Session session =this.sessionFactory.openSession();
+		Transaction tx = null;
+
+		try {
+
+		  tx=session.beginTransaction();
+
+		  productList =(List<Product>)session.createQuery("from Product").list();
+		  tx.commit();
+
+		} catch (RuntimeException f) {
+		  tx.rollback();
+		  throw f;
+		}
+		return productList;
 	}
 
 }

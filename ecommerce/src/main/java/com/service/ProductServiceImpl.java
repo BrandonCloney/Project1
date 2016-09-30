@@ -21,10 +21,13 @@ public class ProductServiceImpl implements ProductService
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	public List<Product> listProducts() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public List<Product> listProducts() 
+	{
+	
+		return (newprod.listProducts());
+		
 	}
+
 
 }

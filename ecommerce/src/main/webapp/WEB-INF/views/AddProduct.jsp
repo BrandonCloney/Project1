@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+ <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,84 +26,126 @@
 <body>
 <%@include file="Header.jsp"%>
 <div class="container-wrapper">
-        <div class="container">
-            <div class="page-header">
-                <h1>Add Product</h1>
+        <div class="container padding-top-10">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<strong>Add Product</strong>
+				<p> Enter the product information!!</p>
+			</div>
+			<div class="panel-body">
 
-                <p class="lead">Enter the product information: </p>
-            </div>
-
-            <form:form id="addproduct" method="post" action="addproduct" commandName="addprod">
+            <form:form id="addproduct" method="post" action="newproduct" 
+            commandName="addprod" enctype="multipart/form-data">
 
                 <div class="form-group">
-                    <label for="name">Name</label>
+                <div class="row">
+                    <label class="control-label col-sm-2" for="name">Name</label>
+                    <div class="col-md-6 padding-top-10">
                     <form:input type="text" path="productName" id="name" class="form-Control"/>
+               		 </div>
+               	</div>
                 </div>
-
+           <div class="form-group">
+           <div class="row">
+           	 <label class="col-md-2 control-label" for="category">Category</label>
+            	<div class="col-md-4">
+            	<form:select name="category" path="productCategory"  class="form-control" id="city">
+         
+         	    <option value="English League">English League</option>
+            	<option value="Spanish League">Spanish League</option>
+              	<option value="German League">German League</option>  
+				</form:select>
+			</div>
+			</div>
+			</div>
                 <div class="form-group">
-                    <label for="category">Category</label>
-                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" 
-                                                                    value="jersey"/>Jersey</label>
-                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" 
-                                                                    value="stockings"/>Stockings</label>
-                    <label class="checkbox-inline"><form:radiobutton path="productCategory" id="category" 
-                                                                    value="accessories"/>Accessories</label>
-                </div>
-
-                <div class="form-group">
-                    <label for="description">Description</label>
+                <div class="row">
+                    <label class="control-label col-sm-2" for="description">Description</label>
+                    <div class="col-md-6 padding-top-10">
                     <form:textarea path="productDescription" id="description" class="form-Control"/>
+                	</div>
+                	</div>
                 </div>
 
                 <div class="form-group">
-                    <label for="price">Price</label>
+                <div class="row">
+                    <label class="control-label col-sm-2" for="price">Price</label>
+                    <div class="col-md-6 padding-top-10">
                     <form:input path="productPrice" id="price" class="form-Control"/>
-                </div>
+                	</div>
+                </div></div>
 
                 <div class="form-group">
-                    <label for="condition">Condition</label>
+                <div class="row">
+                    <label class="control-label col-sm-2" for="condition">Condition</label>
+                    <div class="col-md-6 padding-top-10">
                     <label class="checkbox-inline"><form:radiobutton path="productCondition" id="condition" 
                                                                     value="new"/>new</label>
                     <label class="checkbox-inline"><form:radiobutton path="productCondition" id="condition" 
                                                                     value="used"/>used</label>
-                </div>
+                	</div>
+                	</div></div>
 
                 <div class="form-group">
-                    <label for="status">Status</label>
+                <div class="row">
+                    <label class="control-label col-sm-2" for="status">Status</label>
+                    <div class="col-md-6 padding-top-10">
                     <label class="checkbox-inline"><form:radiobutton path="productStatus" id="status" 
                                                                     value="available"/>Available</label>
                     <label class="checkbox-inline"><form:radiobutton path="productStatus" id="status" 
                                                                     value="unavailable"/>UnAvailable</label>
-                </div>
+                	</div>
+                </div></div>
 
                 <div class="form-group">
-                    <label for="unitsInStock">Units in stock</label>
+                <div class="row">
+                    <label class="control-label col-sm-2" for="unitsInStock">Units in stock</label>
+                    <div class="col-md-6 padding-top-10">
                     <form:input path="unitsInStock" id="unitsInStock" class="form-Control"/>
-                </div>
+               		 </div>
+               		</div></div>
 
                 <div class="form-group">
-                    <label for="condition">Manufacturer</label>
+                <div class="row">
+                    <label class="control-label col-sm-2" for="condition">Manufacturer</label>
+                    <div class="col-md-6 padding-top-10">
                     <label class="checkbox-inline"><form:radiobutton path="productManufacturer" id="manufacturer" 
                                                                     value="adidas"/>Adidas</label>
                     <label class="checkbox-inline"><form:radiobutton path="productManufacturer" id="manufacturer" 
                                                                     value="nike"/>Nike</label>
+                	</div>
+                  </div></div>
+                  <div class="form-group">
+                  <div class="row">
+                    <label class="control-label col-sm-2" for="productImage">Upload Picture</label>
+                    <div class="col-md-6 padding-top-10">
+                    <form:input id="productImage" path="productImage" type="file" class="form:input-large"/>
                 </div>
+                </div></div>
                 <br>
-           		<input type="submit" value="submit" class="btn btn-primary" />
-          
+                <div class="form-group">
+                	<div class="col-sm-offset-2 col-sm-10">
+           			<button type="submit" class="btn btn-primary"> Add Item</button>
+           			</div>
+           		</div>
+          		
             </form:form>
             </div>
-            </div>
+            </div></div>
+            <c:if test="${successmsg=='Product Added Successfully'}">
+   			 <h2><c:out value="${successmsg}"></c:out></h2>
+   			</c:if> 
+            
+   
+        </div>
+           <br>
+           <br>
            <br>
            <br>
            
 		<%@include file="Footer.jsp"%>
 
 
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="<c:url value="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" />"></script>
-    <script src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 
 </body>
 </html>

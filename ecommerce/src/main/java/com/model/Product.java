@@ -2,11 +2,15 @@ package com.model;
 
 import javax.persistence.*;
 
+import org.springframework.web.multipart.MultipartFile;
+
+
 	@Entity
 	public class Product {
 		@Id
-	    @GeneratedValue(strategy=GenerationType.AUTO)
-	    private long productId;
+		@GeneratedValue(strategy=GenerationType.AUTO)
+		@Column
+		private int pID;
 		@Column
 	    private String productName;
 		@Column
@@ -21,11 +25,33 @@ import javax.persistence.*;
 	    private String productStatus;
 		@Column
 	    private int unitsInStock;
-		public long getProductId() {
-			return productId;
+		@Column
+	    private String productManufacturer;
+		
+		@Column
+		private String imgname;
+		
+		public String getImgname() {
+			return imgname;
 		}
-		public void setProductId(long productId) {
-			this.productId = productId;
+		public void setImgname(String imgname) {
+			this.imgname = imgname;
+		}
+		@Transient
+		private MultipartFile productImage;
+		
+		
+		public MultipartFile getProductImage() {
+			return productImage;
+		}
+		public void setProductImage(MultipartFile productImage) {
+			this.productImage = productImage;
+		}
+		public int getpID() {
+			return pID;
+		}
+		public void setpID(int pID) {
+			this.pID = pID;
 		}
 		public String getProductName() {
 			return productName;
@@ -75,8 +101,19 @@ import javax.persistence.*;
 		public void setProductManufacturer(String productManufacturer) {
 			this.productManufacturer = productManufacturer;
 		}
-		@Column
-	    private String productManufacturer;
+		public void setInputNull()
+		{
+			this.productName="";
+			this.productCategory="";
+			this.productDescription="";
+			this.productPrice=0.0;
+			this.productCondition="";
+			this.productStatus="";
+
+			this.productManufacturer="";
+			
+		}
+		
 		
 	}
 

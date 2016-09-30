@@ -2,11 +2,13 @@
     .carousel-inner > .item > img 
     {
     margin: 0 auto;
+    min-width: 20%;
+   	min-height: 200px;
 	}
     </style>
     
 
-<div class="navbar navbar-dark bg-primary" role="navigation">
+<div class="navbar navbar-inverse" style="margin-bottom:0px;" role="navigation">
   		<div class="conatiner">
   			<div class="navbar-header">
   				<button type="button" class="navbar-toggle" data-toggle="collapse" 
@@ -17,9 +19,22 @@
   				<span class="icon-bar"style="background-color:white"></span>
   				</button>
   			<a class="navbar-brand" href="index" style="color:white"><span class="glyphicon glyphicon-flash"><strong>JerseyStore</strong></span></a>
+  			 
   			</div>
   			<div class="navbar-collapse collapse">
-  				<ul class="nav navbar-nav navbar-right">
+  				<ul class="nav navbar-nav">
+  				<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"style="color:white"> Shop By Catergory <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+          <li class="dropdown-header"><b>Jerseys</b></li>
+          <li class="divider"></li>
+            <li><a href="#">English League</a></li>
+            <li><a href="#">Spanish League</a></li>
+            <li><a href="#">German League</a></li>
+            </ul>
+            </li>
+            </ul>
+            	<ul class="nav navbar-nav navbar-right">
   					<li class="active"><a href="index"style="color:white">Home</a></li>
   					<li><a href="AboutUs"style="color:white"><span class="glyphicon glyphicon-info-sign">AboutUs</span></a></li>
   					<li><a href="Register"style="color:white"><span class="glyphicon glyphicon-pencil">Register</span></a></li>
