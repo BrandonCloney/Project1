@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
  <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+ <%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -90,6 +91,9 @@
 				</form:form>
 			</div>
 		</div>
+		<c:if test="${successmsg=='You Have Registered Successfully'}">
+   			 <h2><c:out value="${successmsg}"></c:out></h2>
+   			</c:if>
 	</div>
 	 <br>
 	  <br>

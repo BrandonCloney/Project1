@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Product Pagination</title>
+<title>English League</title>
 	<!-- Angular js -->
 <script src="<c:url value="/resources/js/angular.min.js" />"></script>
 	<!-- Bootstrap -->
@@ -64,6 +64,11 @@
   				</p>
  				</div>
 			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<a href="#" class="btn btn-primary">BuyNow</a>
+				</div>
+			</div>
 			
   	 	</div><!-- end row -->
  	</div><!-- end container -->
@@ -77,8 +82,7 @@
 	 var json ='${products}';
 	 var products=JSON.parse(json); 
 	 $scope.productlist=products;
-	 
-	 
+	
 	 });
  
 	

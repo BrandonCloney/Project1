@@ -10,4 +10,5 @@ public interface ProductDAO
 	public void addProduct(Product p);
 	public Product getProductById(int id);
 	public List<Product> listProducts();
+	List<Product> getProductByCategory(String category);
 }

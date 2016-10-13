@@ -63,7 +63,7 @@ public class ProductController
 		List<Product> plist=newprod.listProducts();
 		try {
 			String productlist=mapper.writeValueAsString(plist);
-			System.out.println(productlist);
+			
 			model.addAttribute("products",productlist);
 		} catch (JsonGenerationException e) {
 			// TODO Auto-generated catch block
@@ -79,14 +79,14 @@ public class ProductController
 		return new ModelAndView ("Productlist");
 		
 	}
-	@RequestMapping("/ProductPagination")  
-    public ModelAndView productpagination(Model model) 
+	@RequestMapping("/Englishleague")  
+    public ModelAndView englishProducts(Model model) 
 	{  
-ObjectMapper mapper=new ObjectMapper();
+		ObjectMapper mapper=new ObjectMapper();
 		
-		List<Product> plist=newprod.listProducts();
+		List<Product> jerseyel=newprod.getProductByCategory("English League");
 		try {
-			String productlist=mapper.writeValueAsString(plist);
+			String productlist=mapper.writeValueAsString(jerseyel);
 			model.addAttribute("products",productlist);
 		} catch (JsonGenerationException e) {
 			// TODO Auto-generated catch block
@@ -98,6 +98,48 @@ ObjectMapper mapper=new ObjectMapper();
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        return new ModelAndView("ProductPagination");
+        return new ModelAndView("Englishleague");
+	}
+	@RequestMapping("/Spanishleague")  
+    public ModelAndView spanishProducts(Model model) 
+	{  
+		ObjectMapper mapper=new ObjectMapper();
+		
+		List<Product> jerseysl=newprod.getProductByCategory("Spanish League");
+		try {
+			String productlist=mapper.writeValueAsString(jerseysl);
+			model.addAttribute("products",productlist);
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return new ModelAndView("Spanishleague");
+	}
+	@RequestMapping("/Germanleague")  
+    public ModelAndView germanProducts(Model model) 
+	{  
+		ObjectMapper mapper=new ObjectMapper();
+		
+		List<Product> jerseygl=newprod.getProductByCategory("German League");
+		try {
+			String productlist=mapper.writeValueAsString(jerseygl);
+			model.addAttribute("products",productlist);
+		} catch (JsonGenerationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        return new ModelAndView("Germanleague");
 	}
 }

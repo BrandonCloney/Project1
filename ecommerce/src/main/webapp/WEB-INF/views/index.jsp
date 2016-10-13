@@ -22,29 +22,32 @@
   </head>
   <body>
   <%@include file="Header.jsp"%>
-  	
+  	<br>
   <div class="container">
+  <div class="row">
+  <h1>View Products</h1>
+  </div>
   	<div class="row">
   		<div class="col-md-4 col-sm-4 col-xs-12">
   			<img src="<c:url value="/resources/img/Chelsea.jpg"/>" alt="Jersey" class="img-circle">
   			<h2>English League</h2>
-  			<p>Get this Chelsea Jersey at just 20$</p>
-  			<a href="ProductPagination" class="btn btn-primary">BuyNow</a>
+  			<p>Get Your Favourite English Club Jersey HERE!</p>
+  			<a href="Englishleague" class="btn btn-primary">BuyNow</a>
   		</div>
   		<div class="col-md-4 col-sm-4 col-xs-12">
   			<img src="<c:url value="/resources/img/Bayern.jpg"/>" alt="BayernJersey" class="img-circle">
   			<h2>German League</h2>
-  			<p>Get this Bayern Jersey at just 20$</p>
-  			<a href="#" class="btn btn-primary">BuyNow</a>
+  			<p>Get Your Favourite German Club Jersey HERE!</p>
+  			<a href="Germanleague" class="btn btn-primary">BuyNow</a>
   		</div>
   		<div class="col-md-4 col-sm-4 col-xs-12">
-  			<img src="<c:url value="/resources/img/Chelsea.jpg"/>" alt="MadridJersey" class="img-circle">
+  			<img src="<c:url value="/resources/img/barcelona.jpg"/>" alt="MadridJersey" class="img-circle">
   			<h2>Spanish League</h2>
-  			<p>Get this Madrid Jersey at just 30$</p>
-  			<a href="#" class="btn btn-primary">BuyNow</a>
+  			<p>Get Your Favourite Spanish Club Jersey HERE!</p>
+  			<a href="Spanishleague" class="btn btn-primary">BuyNow</a>
   		</div>
   	</div>
-  </div><br><br>
+  </div><br><br><br><br>
   	<%@include file="Footer.jsp"%>
 
  

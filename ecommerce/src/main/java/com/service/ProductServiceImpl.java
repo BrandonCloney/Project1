@@ -29,5 +29,11 @@ public class ProductServiceImpl implements ProductService
 		
 	}
 
+	public List<Product> getProductByCategory(String category) 
+	{
+		
+		return (newprod.getProductByCategory(category));
+	}
+
 
 }

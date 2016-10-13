@@ -25,8 +25,7 @@
   			
   		<div class="navbar-text pull-left">
   			<font color="white">
-  			ContactUs @ Email ID-bcloney95@gmail.com<br>
-  			Phone:+91-9840399632
+  			Copyright &copy; Jersey Store 2016
   			</font>
   		</div>
   			

@@ -29,28 +29,28 @@
 				Login
 			</div>
 			<div class="panel-body">
-				<form>
+				<form action="<c:url value='j_spring_security_check' />" method="POST">
 					<div class="row">
 						<div class="col-md-6 padding-top-10">
 							<label for="email" class="control-label">Email Address:</label>
-							<input type="text" class="form-control" id="email" placeholder="Email Address" />
+							<input type="text"  name='j_username' class="form-control" id="email" placeholder="Email Address" />
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-6 padding-top-10">
 							<label for="password" class="control-label">Password:</label>
-							<input type="password" class="form-control" id="password" placeholder="Enter your password" />
+							<input type="password"  name='j_password' class="form-control" id="password" placeholder="Enter your password" />
 						</div>
 					</div><br>
 					<div class="row">
 						<div class="col-md-2">
-							<button type="button" class="btn btn-success">Login</button>
+							<button type="submit" class="btn btn-success">Login</button>
 						</div>
 					</div>
 					</form>
 			</div>
 		</div>
-	</div>
+	</div><br><br><br><br>
 	<%@include file="Footer.jsp"%>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

@@ -23,6 +23,11 @@ public class FrontController
 	{  
         return new ModelAndView("Login");
 	}
+	@RequestMapping("/logout")  
+    public ModelAndView logoutsuccess() 
+	{  
+        return new ModelAndView("logout");
+	}
 	
 
 }

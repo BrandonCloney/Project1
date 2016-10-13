@@ -74,4 +74,26 @@ public class ProductDAOImpl implements ProductDAO
 		return productList;
 	}
 
+	@SuppressWarnings({ "deprecation", "unchecked" })
+	@Transactional
+	public List<Product> getProductByCategory(String category) 
+	{
+		List<Product> jersey=null;
+		Session session=this.sessionFactory.openSession();
+		Transaction tx=null;
+		try {
+
+			  tx=session.beginTransaction();
+			  String hql="from Product where productCategory ="+"'"+category+"'";
+			  jersey =(List<Product>)session.createQuery(hql).list();
+			  
+			  tx.commit();
+
+			} catch (RuntimeException f) {
+			  tx.rollback();
+			  throw f;
+			}
+		return jersey;
+	}
+
 }

@@ -30,6 +30,25 @@ public class UserRegistration
 	@Column
 	private long mobileno;
 	
+	@Column(name = "role")
+	private String role="ROLE_USER";
+	
+	@Column
+	private boolean enabled=true;
+	
+	
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
+	}
+	public String getRole() {
+		return role;
+	}
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public int getUserid() {
 		return userid;
 	}
@@ -95,5 +114,18 @@ public class UserRegistration
 	}
 	public void setMobileno(long mobileno) {
 		this.mobileno = mobileno;
+	}
+	public void setNull()
+	{
+		this.firstname="";
+		this.lastname="";
+		this.address="";
+		this.city="";
+		this.state="";
+		this.zipcode=0;
+		this.email="";
+		this.password="";
+		this.confirmpassword="";
+		this.mobileno=0;
 	}
 }
