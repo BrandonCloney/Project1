@@ -50,7 +50,7 @@
 					</form>
 			</div>
 		</div>
-	</div><br><br><br><br>
+	</div><br><br><br><br><br><br>
 	<%@include file="Footer.jsp"%>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

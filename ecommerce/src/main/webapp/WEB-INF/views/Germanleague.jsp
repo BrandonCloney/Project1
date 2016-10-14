@@ -66,7 +66,7 @@
 			</div>
 			<div class="row">
 				<div class="col-md-12">
-					<a href="#" class="btn btn-primary">BuyNow</a>
+					<a href="additemtocart?productid={{p.pID}}" class="btn btn-primary">AddToCart</a>
 				</div>
 			</div>
 			

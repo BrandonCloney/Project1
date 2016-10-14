@@ -58,7 +58,7 @@
                 <p>Pick Up Your favourite club jersey from the German top tier football league at amazingly cheap prices from our store.</p>
             </div>
         </div>
-        </div><br><br><br><br>
+        </div><br><br><br><br><br><br>
         
 <%@include file="Footer.jsp"%>
 

@@ -7,7 +7,7 @@ import com.model.Product;
 public interface ProductService 
 {
 	public void addProduct(Product p);
-	public Product getProductById(int id);
+	public Product findProductById(int pid);
 	public List<Product> listProducts();
 	List<Product> getProductByCategory(String category);
 }

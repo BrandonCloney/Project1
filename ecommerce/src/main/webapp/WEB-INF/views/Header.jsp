@@ -34,11 +34,11 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"style="color:white"> Shop By Catergory <span class="caret"></span></a>
           <ul class="dropdown-menu">
           <li class="dropdown-header"><b>Jerseys</b></li>
-          <li class="divider"></li>
+          	<li class="divider"></li>
             <li><a href="Englishleague">English League</a></li>
             <li><a href="Spanishleague">Spanish League</a></li>
             <li><a href="Germanleague">German League</a></li>
-            </ul>
+           </ul>
             </li>
             </ul>
             	
@@ -46,7 +46,15 @@
   					<li class="active"><a href="index"style="color:white">Home</a></li>
   					<li><a href="AboutUs"style="color:white"><span class="glyphicon glyphicon-info-sign">AboutUs</span></a></li>
   					<li><a href="Register"style="color:white"><span class="glyphicon glyphicon-pencil">Register</span></a></li>
-  					<li><a href="Login"style="color:white"><span class="glyphicon glyphicon-user">Login</span></a></li>	
+  					<li><a href="Login"style="color:white"><span class="glyphicon glyphicon-user">Login</span></a></li>
+  					
+  				<c:if test="${empty cartObj }">
+  					<li><a href="viewcart"style="color:white"><span class="glyphicon glyphicon-shopping-cart">Cart(0)</span></a></li>	
+  				</c:if>
+  				
+  				<c:if test="${not empty cartObj }">
+  				<li><a href="viewcart"style="color:white"><span class="glyphicon glyphicon-shopping-cart">Cart(<c:out value="${cartObj.cartCount}"></c:out>)</span></a></li>	
+  				</c:if>
   				</ul>
   			</div>		
   		</div>
@@ -94,6 +102,13 @@
   					<li><a href="AboutUs"style="color:white"><span class="glyphicon glyphicon-info-sign">AboutUs</span></a></li>
   					<li><a href="Productlist" style="color:white">Product List</a></li>
   					<li><a href="AddProduct" style="color:white">AddProduct</a></li>
+  			<c:if test="${empty cartObj }">
+  				<li><a href="viewcart"style="color:white"><span class="glyphicon glyphicon-shopping-cart">Cart(0)</span></a></li>	
+  			</c:if>
+  				
+  			<c:if test="${not empty cartObj }">
+  			    <li><a href="viewcart"style="color:white"><span class="glyphicon glyphicon-shopping-cart">Cart(<c:out value="${cartObj.cartCount}"></c:out>)</span></a></li>	
+  			</c:if>
   					<li><a href="<c:url value="j_spring_security_logout" />" style="color:white"><span class="glyphicon glyphicon-log-out">Logout</span></a></li>
   					
   				</ul>

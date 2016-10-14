@@ -8,7 +8,7 @@ import com.model.Product;
 public interface ProductDAO 
 {
 	public void addProduct(Product p);
-	public Product getProductById(int id);
+	public Product findProductById(int pid);
 	public List<Product> listProducts();
 	List<Product> getProductByCategory(String category);
 }

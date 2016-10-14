@@ -113,6 +113,8 @@
                                                                     value="adidas"/>Adidas</label>
                     <label class="checkbox-inline"><form:radiobutton path="productManufacturer" id="manufacturer" 
                                                                     value="nike"/>Nike</label>
+                    <label class="checkbox-inline"><form:radiobutton path="productManufacturer" id="manufacturer" 
+                                                                    value="puma"/>Puma</label>
                 	</div>
                   </div></div>
                   <div class="form-group">
@@ -142,7 +144,7 @@
            <br>
            <br>
            <br>
-           
+           <br><br>
 		<%@include file="Footer.jsp"%>
 
 

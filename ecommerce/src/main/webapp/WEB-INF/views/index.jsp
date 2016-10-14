@@ -47,7 +47,7 @@
   			<a href="Spanishleague" class="btn btn-primary">BuyNow</a>
   		</div>
   	</div>
-  </div><br><br><br><br>
+  </div><br><br><br><br><br><br>
   	<%@include file="Footer.jsp"%>
 
  

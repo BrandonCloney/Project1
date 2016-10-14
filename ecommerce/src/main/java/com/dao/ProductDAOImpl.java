@@ -2,9 +2,11 @@ package com.dao;
 
 import java.util.List;
 
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -44,11 +46,6 @@ public class ProductDAOImpl implements ProductDAO
 		  throw f;
 		}
 
-	}
-
-	public Product getProductById(int id) {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 	@SuppressWarnings({ "unchecked", "deprecation" })
@@ -96,4 +93,39 @@ public class ProductDAOImpl implements ProductDAO
 		return jersey;
 	}
 
+	
+	
+	@SuppressWarnings("deprecation")
+	@Transactional
+	public Product findProductById(int pid) 
+	{
+		Session session=this.sessionFactory.openSession();
+		Transaction tx=null;
+		Product p=null;
+		try
+		{
+			tx=session.beginTransaction();
+			String hql="from Product where pID = :id";
+			@SuppressWarnings("rawtypes")
+			Query query=session.createQuery(hql);
+			query.setInteger("id", pid);
+			
+			p=(Product) query.uniqueResult();
+			tx.commit();
+		}
+		catch(HibernateException e)
+		{
+		
+		
+		e.printStackTrace();
+		}
+		
+		finally{
+			
+			session.close();
+			}
+		
+		return p;
+	
+	}
 }

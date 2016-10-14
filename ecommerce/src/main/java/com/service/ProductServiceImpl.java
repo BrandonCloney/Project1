@@ -17,10 +17,6 @@ public class ProductServiceImpl implements ProductService
 		newprod.addProduct(p);
 	}
 
-	public Product getProductById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	public List<Product> listProducts() 
 	{
@@ -33,6 +29,12 @@ public class ProductServiceImpl implements ProductService
 	{
 		
 		return (newprod.getProductByCategory(category));
+	}
+
+	public Product findProductById(int pid) 
+	{
+		return (newprod.findProductById(pid));
+		
 	}
 
 
