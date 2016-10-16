@@ -38,4 +38,11 @@ public class ProductServiceImpl implements ProductService
 	}
 
 
+	public void deleteProduct(int pid) {
+		
+		newprod.deleteProduct(pid);
+		
+	}
+
+
 }

@@ -128,4 +128,39 @@ public class ProductDAOImpl implements ProductDAO
 		return p;
 	
 	}
+
+	@Transactional
+	public void deleteProduct(int pid) {
+		Session session=this.sessionFactory.openSession();
+		Transaction tx=null;
+		Product prod=findProductById(pid);
+		
+	
+		try
+		{
+			tx=session.beginTransaction();
+			session.delete(prod);
+			tx.commit();
+			
+			
+		}
+		
+		catch(HibernateException e)
+		{
+			if(tx!=null)
+			{
+				tx.rollback();
+			}
+			
+			e.printStackTrace();
+		}
+		
+		finally
+		{
+			session.close();
+		}
+		
+	}
+
+	
 }

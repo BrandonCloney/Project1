@@ -115,7 +115,7 @@ import org.springframework.web.multipart.MultipartFile;
 			this.productPrice=0.0;
 			this.productCondition="";
 			this.productStatus="";
-
+			this.unitsInStock=0;
 			this.productManufacturer="";
 			
 		}

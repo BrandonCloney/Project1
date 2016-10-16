@@ -60,8 +60,8 @@
    			<td>{{p.unitsInStock}}</td>
    			<td>{{p.productManufacturer}}</td>
    			<td>{{p.imgname}}</td>
-   			<td></td>
-   		 </tr>
+   			<td><a href="deleteprod?productid={{p.pID}}" title="delete"><span class="glyphicon glyphicon-trash"></span></a> </td>		 
+   		</tr>
 		</tbody>	
 	</table>
 </div>

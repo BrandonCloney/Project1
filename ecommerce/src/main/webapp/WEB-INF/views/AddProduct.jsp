@@ -49,7 +49,7 @@
            <div class="row">
            	 <label class="col-md-2 control-label" for="category">Category</label>
             	<div class="col-md-4">
-            	<form:select name="category" path="productCategory"  class="form-control" id="city">
+            	<form:select name="category" path="productCategory"  class="form-control" id="category">
          
          	    <option value="English League">English League</option>
             	<option value="Spanish League">Spanish League</option>

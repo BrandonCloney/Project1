@@ -14,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -142,4 +143,16 @@ public class ProductController
 		}
         return new ModelAndView("Germanleague");
 	}
+	
+	@RequestMapping(value="/deleteprod" ,method=RequestMethod.GET)
+	public String deleteProduct(@RequestParam("productid") String idParam1)
+	{
+		int pid=Integer.parseInt(idParam1);
+		newprod.deleteProduct(pid);
+		
+		return "redirect:" + "Productlist";
+	}
+	
+	
+	
 }

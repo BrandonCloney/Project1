@@ -68,7 +68,7 @@
    			<td>{{p.product.productCategory}}</td>
    			<td>Rs. {{p.product.productPrice}}</td>
    			<td>{{p.quantity}}</td>
-   			<td>Rs. {{p.totalPrice}}</td>
+   			<td>Rs. {{p.totalprice}}</td>
    			
    			</tr>
 
@@ -89,7 +89,7 @@
  	
  	
     
- <center> <a href="<spring:url value="/checkout" />" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span> Check out</a></center>
+ <center> <a href="cart_checkout" class="btn btn-success"><span class="glyphicon glyphicon-shopping-cart"></span> Check out</a></center>
     
     
     

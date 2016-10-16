@@ -25,7 +25,7 @@ import com.model.Product;
 import com.service.ProductServiceImpl;
 
 @Controller
-@SessionAttributes({"personObj","cartObj"})
+@SessionAttributes({"cartObj"})
 public class CartController 
 {
 	@Autowired
@@ -54,8 +54,8 @@ public class CartController
 		CartItem item = new CartItem();
 		item.setProduct(p);
 		item.setQuantity(qty);
-		double totalPrice=p.getProductPrice()*qty;
-		item.setTotalprice(totalPrice);
+		double totalprice=p.getProductPrice()*qty;
+		item.setTotalprice(totalprice);
 		
 		List<CartItem> cartList = new ArrayList<CartItem>();
 		if(cart.getCartItems()==null)
