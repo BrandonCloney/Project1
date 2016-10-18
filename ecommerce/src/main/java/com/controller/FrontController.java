@@ -29,5 +29,10 @@ public class FrontController
         return new ModelAndView("logout");
 	}
 	
+	@RequestMapping("/error")  
+    public ModelAndView errorpage() 
+	{  
+        return new ModelAndView("error");
+	}
 
 }
