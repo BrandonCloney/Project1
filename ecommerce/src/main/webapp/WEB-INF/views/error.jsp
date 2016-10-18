@@ -15,7 +15,7 @@
  		<br>
  		<div class=" row jumbotron">
  		
- 		<h2>This Page can be accessed only by ADMIN !! </h2>
+ 		<h2>Invalid Credentials !!  </h2>
  		</div>
  		<br>
  		
